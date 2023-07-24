@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3>@ViewData["Message"]</h3>
+<p>There are @ViewData["StudentCount"] students added into the list.</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student Id</th>
+            <th>Student Name</th>
+            <th>Student Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewData["Students"] as List<Student>)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Age</td>
+            </tr>
+        }
+    </tbody>
+</table>
